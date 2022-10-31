@@ -56,6 +56,7 @@ def max_prod(number: str, length: int):
     return list_of_prod.max()
 
 
-assert max_prod(number, 4) == 5832
+if __name__ == "__main__":
+    assert max_prod(number, 4) == 5832
 
-print(max_prod(number, 13))  # 23514624000
+    assert max_prod(number, 13) == 23_514_624_000

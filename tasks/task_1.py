@@ -13,6 +13,7 @@ def sum_num(start=1, stop=10):
     return seq[(seq % 3 == 0) | (seq % 5 == 0)].sum()
 
 
-assert sum_num(1, 10) == 23, 'The sum of natural numbers less than 10, multiples of 3 or 5 should be equal to 23'
+if __name__ == "__main__":
+    assert sum_num(1, 10) == 23, 'The sum of natural numbers less than 10, multiples of 3 or 5 should be equal to 23'
 
-sum_num(stop=1000)
+    assert sum_num(stop=1000) == 233168

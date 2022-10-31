@@ -207,5 +207,6 @@ number = '''
             20849603980134001723930671666823555245252804609722
             53503534226472524250874054075591789781264330331690'''
 
-num = np.array([int(n) for n in number.split()])
-print(str(num.sum())[:10])
+if __name__ == "__main__":
+    num = np.array([int(n) for n in number.split()])
+    assert str(num.sum())[:10] == '5537376230'

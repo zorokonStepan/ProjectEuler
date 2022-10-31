@@ -21,4 +21,7 @@ def diff_sum_squares_and_square_sum(start, stop):
     return square_sum - sum_squares
 
 
-assert diff_sum_squares_and_square_sum(1, 10) == 2640
+if __name__ == "__main__":
+    assert diff_sum_squares_and_square_sum(1, 10) == 2640
+
+    assert diff_sum_squares_and_square_sum(1, 100) == 25164150

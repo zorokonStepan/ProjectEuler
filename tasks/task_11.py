@@ -76,10 +76,11 @@ left_down_diag_max_prod = np.array([np.array((table_np[i, j],
                                     for i in range(table_np.shape[0] - step + 1)
                                     for j in range(table_np.shape[1] - 1, step - 2, -1)]).max()
 
-print(f'{horizontal_max_prod=}')
-print(f'{vertical_max_prod=}')
-print(f'{left_up_diag_max_prod=}')
-print(f'{left_down_diag_max_prod=}')
+if __name__ == "__main__":
+    print(f'{horizontal_max_prod=}')
+    print(f'{vertical_max_prod=}')
+    print(f'{left_up_diag_max_prod=}')
+    print(f'{left_down_diag_max_prod=}')
 
-print(max(horizontal_max_prod, vertical_max_prod, left_up_diag_max_prod, left_down_diag_max_prod))
+    print(max(horizontal_max_prod, vertical_max_prod, left_up_diag_max_prod, left_down_diag_max_prod))
 

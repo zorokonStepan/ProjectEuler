@@ -1,6 +1,4 @@
-import numpy as np
-
-'''
+"""
 A sequence of triangular numbers is formed by adding natural numbers.
 For example, the 7th triangular number is 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28.
 The first ten triangular numbers:
@@ -19,7 +17,7 @@ Let 's list the divisors of the first seven triangular numbers:
 As we can see, 28 is the first triangular number with more than five divisors.
 
 What is the first triangular number that has more than five hundred divisors?
-'''
+"""
 
 
 class MyNumbers:
@@ -44,22 +42,23 @@ def count_divisors(number: int):
     if number in (2, 3, -2, -3):
         return 2
 
-    cnt_divisors = []
+    cnt_divisors = 0
     for i in range(1, number // 2 + 1):
         if number % i == 0:
-            cnt_divisors.append(i)
-    cnt_divisors.append(number)
+            cnt_divisors += 1
+    cnt_divisors += 1  # + number
 
-    return len(cnt_divisors)
+    return cnt_divisors
 
 
-assert count_divisors(1) == 1
-assert count_divisors(3) == 2
-assert count_divisors(6) == 4
-assert count_divisors(10) == 4
-assert count_divisors(15) == 4
-assert count_divisors(21) == 4
-assert count_divisors(28) == 6
+def test_count_divisors():
+    assert count_divisors(1) == 1
+    assert count_divisors(3) == 2
+    assert count_divisors(6) == 4
+    assert count_divisors(10) == 4
+    assert count_divisors(15) == 4
+    assert count_divisors(21) == 4
+    assert count_divisors(28) == 6
 
 
 def triangular_number_with_a_certain_number_of_divisors(stop: int):
@@ -80,12 +79,13 @@ def triangular_number_with_a_certain_number_of_divisors(stop: int):
         return None
 
 
-assert triangular_number_with_a_certain_number_of_divisors(1) == 1
-assert triangular_number_with_a_certain_number_of_divisors(2) == 3
-assert triangular_number_with_a_certain_number_of_divisors(3) == None
-assert triangular_number_with_a_certain_number_of_divisors(4) == 6
-assert triangular_number_with_a_certain_number_of_divisors(5) == None
-assert triangular_number_with_a_certain_number_of_divisors(6) == 28
+def test_triangular_number_with_a_certain_number_of_divisors():
+    assert triangular_number_with_a_certain_number_of_divisors(1) == 1
+    assert triangular_number_with_a_certain_number_of_divisors(2) == 3
+    assert triangular_number_with_a_certain_number_of_divisors(3) == None
+    assert triangular_number_with_a_certain_number_of_divisors(4) == 6
+    assert triangular_number_with_a_certain_number_of_divisors(5) == None
+    assert triangular_number_with_a_certain_number_of_divisors(6) == 28
 
 
 def is_triangular_number(number: int):
@@ -100,10 +100,18 @@ def is_triangular_number(number: int):
     return False
 
 
-assert is_triangular_number(1) == True
-assert is_triangular_number(3) == True
-assert is_triangular_number(6) == True
-assert is_triangular_number(10) == True
-assert is_triangular_number(15) == True
-assert is_triangular_number(21) == True
-assert is_triangular_number(28) == True
+def test_is_triangular_number():
+    assert is_triangular_number(1) == True
+    assert is_triangular_number(3) == True
+    assert is_triangular_number(6) == True
+    assert is_triangular_number(10) == True
+    assert is_triangular_number(15) == True
+    assert is_triangular_number(21) == True
+    assert is_triangular_number(28) == True
+
+
+if __name__ == "__main__":
+    test_count_divisors()
+    test_triangular_number_with_a_certain_number_of_divisors()
+    test_is_triangular_number()
+

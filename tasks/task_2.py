@@ -18,6 +18,7 @@ def sum_fib(stop):
     return seq[seq % 2 == 0].sum()
 
 
-assert sum_fib(89) == 44
+if __name__ == "__main__":
+    assert sum_fib(89) == 44
 
-print(sum_fib(4_000_000))
+    assert sum_fib(4_000_000) == 4613732

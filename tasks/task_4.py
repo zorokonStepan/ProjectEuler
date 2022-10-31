@@ -11,6 +11,7 @@ def max_palindrome(start, stop):
     return seq.max()
 
 
-assert max_palindrome(10, 100) == 9009
+if __name__ == "__main__":
+    assert max_palindrome(10, 100) == 9009
 
-print(max_palindrome(100, 1000))
+    assert max_palindrome(100, 1000) == 906609
